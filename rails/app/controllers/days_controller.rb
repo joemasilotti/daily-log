@@ -6,10 +6,10 @@ class DaysController < ApplicationController
   end
 
   def show
-    @exercise_entries = ExerciseEntry.where(occurred_on: @date)
-    @medication_entries = MedicationEntry.where(occurred_on: @date)
+    @exercise_entries = ExerciseEntry.where(occurred_on: @date).order(:created_at)
+    @medication_entries = MedicationEntry.where(occurred_on: @date).order(:created_at)
     @water = WaterEntry.where(occurred_on: @date).sum(:amount)
-    @food_entries = FoodEntry.where(occurred_on: @date)
+    @food_entries = FoodEntry.where(occurred_on: @date).order(:created_at)
   end
 
   private
