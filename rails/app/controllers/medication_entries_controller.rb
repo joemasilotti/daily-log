@@ -16,5 +16,6 @@ class MedicationEntriesController < ApplicationController
 
   def entry_params
     params.require(:medication_entry).permit(:name, :occurred_on)
+      .merge(user: current_user)
   end
 end

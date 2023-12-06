@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_06_182611) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_06_191045) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,6 +19,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_06_182611) do
     t.date "occurred_on", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_exercise_entries_on_user_id"
   end
 
   create_table "food_entries", force: :cascade do |t|
@@ -27,6 +29,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_06_182611) do
     t.date "occurred_on", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_food_entries_on_user_id"
   end
 
   create_table "medication_entries", force: :cascade do |t|
@@ -34,6 +38,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_06_182611) do
     t.date "occurred_on", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_medication_entries_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,6 +55,12 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_06_182611) do
     t.date "occurred_on", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_water_entries_on_user_id"
   end
 
+  add_foreign_key "exercise_entries", "users"
+  add_foreign_key "food_entries", "users"
+  add_foreign_key "medication_entries", "users"
+  add_foreign_key "water_entries", "users"
 end

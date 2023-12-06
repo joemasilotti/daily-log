@@ -16,5 +16,6 @@ class WaterEntriesController < ApplicationController
 
   def entry_params
     params.require(:water_entry).permit(:amount, :occurred_on)
+      .merge(user: current_user)
   end
 end

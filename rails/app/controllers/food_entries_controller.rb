@@ -16,5 +16,6 @@ class FoodEntriesController < ApplicationController
 
   def entry_params
     params.require(:food_entry).permit(:name, :out, :occurred_on)
+      .merge(user: current_user)
   end
 end

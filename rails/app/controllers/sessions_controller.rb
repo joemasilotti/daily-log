@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :authenticate_user!
+
   def create
     if (user = User.authenticate_by(authentication_params))
       sign_in user

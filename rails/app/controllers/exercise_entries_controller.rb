@@ -16,5 +16,6 @@ class ExerciseEntriesController < ApplicationController
 
   def entry_params
     params.require(:exercise_entry).permit(:name, :occurred_on)
+      .merge(user: current_user)
   end
 end
