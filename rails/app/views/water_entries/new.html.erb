@@ -5,24 +5,22 @@
 <% end %>
 
 <%= form_with model: @entry, html: {"data-turbo-action": "replace"}, class: "max-w-lg mx-auto" do |form| %>
-  <div class="border-b border-gray-900/10 pb-12">
-    <div class="mt-10">
-      <%= form.label :amount, class: "block text-sm font-medium leading-6 text-gray-900" %>
-      <div class="relative mt-2 rounded-md shadow-sm">
-        <%= form.number_field :amount, min: 1, value: nil, class: "block w-full rounded-md border-0 py-1.5 pr-12 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6" %>
+  <div class="form-container">
+    <div class="form-group">
+      <%= form.label :amount, class: "form-label" %>
+      <div class="relative rounded-md shadow-sm">
+        <%= form.number_field :amount, min: 1, value: nil, class: "form-input pr-12" %>
         <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
           <span class="text-gray-500 sm:text-sm">oz</span>
         </div>
       </div>
     </div>
-    <div class="mt-10">
-      <%= form.label :occurred_on, "When?", class: "block text-sm font-medium leading-6 text-gray-900" %>
-      <div class="mt-2">
-        <%= form.date_field :occurred_on, value: Date.today, class: "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6" %>
-      </div>
+    <div class="form-group">
+      <%= form.label :occurred_on, "When?", class: "form-label" %>
+      <%= form.date_field :occurred_on, value: Date.today, class: "form-input" %>
     </div>
   </div>
-  <div class="mt-6 flex items-center justify-end gap-x-6">
-    <%= form.submit "Save", class: "rounded-md bg-primary-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600" %>
+  <div class="form-buttons">
+    <%= form.submit "Save", class: "btn-primary" %>
   </div>
 <% end %>
