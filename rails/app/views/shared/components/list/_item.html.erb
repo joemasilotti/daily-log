@@ -1,0 +1,9 @@
+<%# locals: (title:, out: false) %>
+
+<li class="flex justify-between gap-x-6 py-5">
+  <p class="text-sm font-medium leading-6 text-gray-900"><%= title %></p>
+
+  <% if out %>
+    <span class="inline-flex items-center rounded-md bg-red-100 px-1.5 py-0.5 text-xs font-medium text-red-700 uppercase">Out</span>
+  <% end %>
+</li>

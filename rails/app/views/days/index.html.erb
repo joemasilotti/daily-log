@@ -1,0 +1,29 @@
+<% content_for :title, @date.to_formatted_s(:full) %>
+
+<div class="grid md:grid-cols-2 gap-8">
+  <div class="space-y-8">
+    <%= render "shared/components/list", title: "Exercise", path: new_exercise_entry_path do %>
+      <% @exercise_entries.each do |entry| %>
+        <%= render "shared/components/list/item", title: entry.name %>
+      <% end %>
+    <% end %>
+
+    <%= render "shared/components/list", title: "Medication & supplements", path: new_medication_entry_path do %>
+      <% @medication_entries.each do |entry| %>
+        <%= render "shared/components/list/item", title: entry.name %>
+      <% end %>
+    <% end %>
+
+    <%= render "shared/components/list", title: "Water", path: "#" do %>
+      <%= render "shared/components/list/item", title: "#{@water} oz" %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= render "shared/components/list", title: "Food", path: "#" do %>
+      <% @food_entries.each do |entry| %>
+        <%= render "shared/components/list/item", title: entry.name, out: entry.out? %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

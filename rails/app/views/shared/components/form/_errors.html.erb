@@ -1,0 +1,19 @@
+<%# locals: (name:, errors:) %>
+
+<div class="max-w-lg rounded-md bg-red-50 p-4 mx-auto">
+  <div class="flex">
+    <div class="flex-shrink-0">
+      <%= inline_svg "icons/mini/x_circle.svg", class: "h-5 w-5 text-red-400" %>
+    </div>
+    <div class="ml-3">
+      <h3 class="text-sm font-medium text-red-800">Please fix these issues to add your <%= name %>:</h3>
+      <div class="mt-2 text-sm text-red-700">
+        <ul role="list" class="list-disc space-y-1 pl-5">
+          <% errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<%# locals: (title:, path:) %>
+
+<div class="bg-white rounded-lg overflow-hidden shadow">
+  <%= render "shared/components/list/header", title:, path: %>
+    <ul role="list" class="divide-y divide-gray-100 px-4 sm:px-6">
+      <%= yield %>
+    </ul>
+</div>
