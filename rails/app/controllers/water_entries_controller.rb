@@ -1,6 +1,7 @@
 class WaterEntriesController < ApplicationController
   def new
     @entry = WaterEntry.new
+    @recent_amounts = current_user.water_entries.recent_amounts
   end
 
   def create
@@ -8,6 +9,7 @@ class WaterEntriesController < ApplicationController
     if @entry.save
       redirect_to day_path(@entry.occurred_on), notice: "Added #{@entry.amount} oz of water"
     else
+      @recent_amounts = current_user.water_entries.recent_amounts
       render :new, status: :unprocessable_entity
     end
   end
