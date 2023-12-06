@@ -2,8 +2,11 @@
   <div class="mt-8 md:mt-16 lg:mt-28 xl:mt-32 mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
     <h1 class="max-w-xl text-4xl font-bold tracking-tight text-gray-900 md:text-6xl">A better way to track what matters</h1>
     <p class="mt-6 text-lg leading-8 text-gray-600">Exercising, eating real food, and drinking plenty of water contribute to a healthy life. The Daily Log app helps you keep track. Every day.</p>
-    <div class="mt-10">
+    <div class="mt-10 flex items-center gap-x-6">
       <%= link_to "Get started", new_user_path, class: "btn-primary px-3.5 py-2.5" %>
+      <%= link_to "https://testflight.apple.com/join/shNH9S99" do %>
+        <%= image_tag "app_store.png", class: "h-10" %>
+      <% end %>
     </div>
   </div>
   <div class="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow turbo-native:hidden">
