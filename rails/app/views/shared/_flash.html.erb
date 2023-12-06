@@ -1,24 +1,28 @@
 <% if alert = flash.alert %>
-  <div class="max-w-3xl rounded-md bg-red-50 p-4 mx-auto my-4 sm:my-6">
-    <div class="flex">
-      <div class="flex-shrink-0">
-        <%= inline_svg "icons/mini/x_circle.svg", class: "h-5 w-5 text-red-400" %>
-      </div>
-      <div class="ml-3">
-        <p class="text-sm font-medium text-red-800"><%= alert %></p>
+  <div class="max-w-3xl my-4 sm:my-6 mx-auto px-4 sm:px-6">
+    <div class="rounded-md bg-red-50 p-4">
+      <div class="flex">
+        <div class="flex-shrink-0">
+          <%= inline_svg "icons/mini/x_circle.svg", class: "h-5 w-5 text-red-400" %>
+        </div>
+        <div class="ml-3">
+          <p class="text-sm font-medium text-red-800"><%= alert %></p>
+        </div>
       </div>
     </div>
   </div>
 <% end %>
 
 <% if notice = flash.notice %>
-  <div class="max-w-3xl rounded-md bg-green-50 p-4 mx-auto my-4 sm:my-6">
-    <div class="flex">
-      <div class="flex-shrink-0">
-        <%= inline_svg "icons/mini/check_circle.svg", class: "h-5 w-5 text-green-400" %>
-      </div>
-      <div class="ml-3">
-        <p class="text-sm font-medium text-green-800"><%= notice %></p>
+  <div class="max-w-3xl my-4 sm:my-6 mx-auto px-4 sm:px-6">
+    <div class="rounded-md bg-green-50 p-4">
+      <div class="flex">
+        <div class="flex-shrink-0">
+          <%= inline_svg "icons/mini/check_circle.svg", class: "h-5 w-5 text-green-400" %>
+        </div>
+        <div class="ml-3">
+          <p class="text-sm font-medium text-green-800"><%= notice %></p>
+        </div>
       </div>
     </div>
   </div>
