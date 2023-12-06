@@ -12,7 +12,7 @@
     </div>
     <div class="form-group">
       <%= form.label :occurred_on, "When?", class: "form-label" %>
-      <%= form.date_field :occurred_on, value: Date.today, class: "form-input" %>
+      <%= form.date_field :occurred_on, value: @date, class: "form-input" %>
     </div>
   </div>
   <div class="form-buttons">

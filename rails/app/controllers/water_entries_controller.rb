@@ -1,4 +1,6 @@
 class WaterEntriesController < ApplicationController
+  include HasDate
+
   def new
     @entry = WaterEntry.new
     @recent_amounts = current_user.water_entries.recent_amounts

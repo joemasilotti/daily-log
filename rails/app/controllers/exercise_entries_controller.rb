@@ -1,4 +1,6 @@
 class ExerciseEntriesController < ApplicationController
+  include HasDate
+
   def new
     @entry = ExerciseEntry.new
   end

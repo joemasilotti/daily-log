@@ -1,4 +1,6 @@
 class FoodEntriesController < ApplicationController
+  include HasDate
+
   def new
     @entry = FoodEntry.new
   end

@@ -1,4 +1,6 @@
 class MedicationEntriesController < ApplicationController
+  include HasDate
+
   def new
     @entry = MedicationEntry.new
   end

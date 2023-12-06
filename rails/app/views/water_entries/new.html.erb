@@ -18,7 +18,7 @@
       </div>
       <div class="form-group">
         <%= form.label :occurred_on, "When?", class: "form-label" %>
-        <%= form.date_field :occurred_on, value: Date.today, class: "form-input" %>
+        <%= form.date_field :occurred_on, value: @date, class: "form-input" %>
       </div>
     </div>
     <div class="form-buttons">
@@ -35,7 +35,7 @@
         <div class="min-w-0 flex-1">
           <%= form_with model: @entry, html: {"data-turbo-action": "replace"} do |form| %>
             <%= form.hidden_field :amount, value: amount %>
-            <%= form.hidden_field :occurred_on, value: Date.today %>
+            <%= form.hidden_field :occurred_on, value: @date %>
             <%= form.button type: "submit", class: "focus:outline-none" do %>
               <span class="absolute inset-0" aria-hidden="true"></span>
               <p class="text-sm font-medium text-gray-900"><%= amount %> oz</p>
