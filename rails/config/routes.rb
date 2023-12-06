@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resource :home, only: :show
   resource :session, only: %i[new create destroy]
 
   resources :days, only: %i[index show]
@@ -11,5 +12,5 @@ Rails.application.routes.draw do
     get :ios, on: :collection
   end
 
-  root "days#index"
+  root "home#show"
 end
