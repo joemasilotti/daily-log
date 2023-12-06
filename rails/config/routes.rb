@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   resources :medication_entries, only: %i[new create]
   resources :water_entries, only: %i[new create]
 
+  resources :configurations, only: [] do
+    get :ios, on: :collection
+  end
+
   root "days#index"
 end
