@@ -98,6 +98,8 @@ GEM
     connection_pool (2.4.1)
     crass (1.0.6)
     date (3.3.4)
+    dockerfile-rails (1.5.12)
+      rails (>= 3.0.0)
     drb (2.2.0)
       ruby2_keywords
     erubi (1.12.0)
@@ -162,6 +164,7 @@ GEM
     parser (3.2.2.4)
       ast (~> 2.4.1)
       racc
+    pg (1.5.4)
     pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -247,6 +250,11 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    sentry-rails (5.15.0)
+      railties (>= 5.0)
+      sentry-ruby (~> 5.15.0)
+    sentry-ruby (5.15.0)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -254,9 +262,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.6.9-aarch64-linux)
-    sqlite3 (1.6.9-arm64-darwin)
-    sqlite3 (1.6.9-x86_64-linux)
     standard (1.32.1)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.0)
@@ -309,17 +314,20 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   capybara
+  dockerfile-rails (>= 1.5)
   image_processing (~> 1.2)
   importmap-rails
   inline_svg
   jbuilder
+  pg (~> 1.1)
   pry-rails
   puma (>= 5.0)
   rails (~> 7.1.2)
   redis (>= 4.0.1)
   selenium-webdriver
+  sentry-rails (~> 5.15)
+  sentry-ruby (~> 5.15)
   sprockets-rails
-  sqlite3 (~> 1.4)
   standard
   stimulus-rails
   tailwindcss-rails

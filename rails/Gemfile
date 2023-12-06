@@ -9,10 +9,10 @@ gem "image_processing", "~> 1.2"
 gem "importmap-rails"
 gem "inline_svg"
 gem "jbuilder"
+gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
 gem "redis", ">= 4.0.1"
 gem "sprockets-rails"
-gem "sqlite3", "~> 1.4"
 gem "standard"
 gem "stimulus-rails"
 gem "tailwindcss-rails"
@@ -28,3 +28,9 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "dockerfile-rails", ">= 1.5", :group => :development
+
+gem "sentry-ruby", "~> 5.15"
+
+gem "sentry-rails", "~> 5.15"

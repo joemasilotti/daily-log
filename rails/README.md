@@ -8,7 +8,7 @@
 ## Requirements
 
 * Ruby 3.2.2
-* [mysql](https://dev.mysql.com) - `brew install mysql`
+* PostgreSQL 9.3 - `brew install pg`
 
 ## Initial setup
 
