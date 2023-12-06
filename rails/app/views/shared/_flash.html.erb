@@ -1,5 +1,5 @@
 <% if alert = flash.alert %>
-  <div class="max-w-3xl rounded-md bg-red-50 p-4 mx-auto my-6">
+  <div class="max-w-3xl rounded-md bg-red-50 p-4 mx-auto my-4 sm:my-6">
     <div class="flex">
       <div class="flex-shrink-0">
         <%= inline_svg "icons/mini/x_circle.svg", class: "h-5 w-5 text-red-400" %>
@@ -12,7 +12,7 @@
 <% end %>
 
 <% if notice = flash.notice %>
-  <div class="max-w-3xl rounded-md bg-green-50 p-4 mx-auto my-6">
+  <div class="max-w-3xl rounded-md bg-green-50 p-4 mx-auto my-4 sm:my-6">
     <div class="flex">
       <div class="flex-shrink-0">
         <%= inline_svg "icons/mini/check_circle.svg", class: "h-5 w-5 text-green-400" %>
