@@ -8,11 +8,11 @@
   }
 
   .form-container {
-    @apply border-b border-gray-900/10 pb-12;
+    @apply border-b border-gray-900/10 pb-8 sm:pb-12;
   }
 
   .form-group {
-    @apply mt-10;
+    @apply mt-6 sm:mt-10;
   }
 
   .form-checkbox-group {
