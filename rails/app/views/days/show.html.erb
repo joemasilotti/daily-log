@@ -1,6 +1,6 @@
 <% content_for :title, @date.to_formatted_s(:full) %>
 
-<div class="grid md:grid-cols-2 gap-8">
+<div class="grid md:grid-cols-2 gap-4 sm:gap-8">
   <div class="space-y-4 sm:space-y-8">
     <%= render "shared/components/list", title: "Exercise", path: new_exercise_entry_path do %>
       <% @exercise_entries.each do |entry| %>
@@ -26,4 +26,8 @@
       <% end %>
     <% end %>
   </div>
+</div>
+
+<div class="mt-16">
+  <%= button_to "Sign out", session_path, method: :delete, "data-turbo-action": "replace", class: "btn-secondary w-full" %>
 </div>
