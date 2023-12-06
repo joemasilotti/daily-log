@@ -6,7 +6,7 @@ class MedicationEntriesController < ApplicationController
   def create
     @entry = MedicationEntry.new(entry_params)
     if @entry.save
-      redirect_to day_path(@entry.occurred_on)
+      redirect_to day_path(@entry.occurred_on), notice: "Added #{@entry.name}"
     else
       render :new, status: :unprocessable_entity
     end

@@ -6,7 +6,7 @@ class ExerciseEntriesController < ApplicationController
   def create
     @entry = ExerciseEntry.new(entry_params)
     if @entry.save
-      redirect_to day_path(@entry.occurred_on)
+      redirect_to day_path(@entry.occurred_on), notice: "Added #{@entry.name}"
     else
       render :new, status: :unprocessable_entity
     end

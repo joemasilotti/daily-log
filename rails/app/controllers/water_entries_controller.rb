@@ -6,7 +6,7 @@ class WaterEntriesController < ApplicationController
   def create
     @entry = WaterEntry.new(entry_params)
     if @entry.save
-      redirect_to day_path(@entry.occurred_on)
+      redirect_to day_path(@entry.occurred_on), notice: "Added #{@entry.amount} oz of water"
     else
       render :new, status: :unprocessable_entity
     end
