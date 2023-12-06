@@ -12,7 +12,7 @@
   </head>
 
   <body class="h-full">
-    <%= render "shared/header", title: content_for(:title) %>
+    <%= render "shared/header", title: content_for(:title) || "Daily Log" %>
     <%= render "shared/flash" %>
 
     <main>
