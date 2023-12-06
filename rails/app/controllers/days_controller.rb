@@ -1,4 +1,6 @@
 class DaysController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     redirect_to day_path(Date.today)
   end

@@ -2,9 +2,17 @@
 
 <header class="bg-white shadow turbo-native:hidden">
   <div class="mx-auto max-w-7xl px-4 py-4 sm:py-6 sm:px-6 lg:px-8">
-    <div class="flex items-center space-x-4">
-      <%= inline_svg "logo.svg", class: "h-8 sm:h-10 w-auto text-gray-600" %>
-      <h1 class="text-xl sm:text-3xl font-bold leading-tight tracking-tight text-gray-900"><%= title %></h1>
+    <div class="flex justify-between items-center">
+      <div class="flex items-center space-x-4">
+        <%= inline_svg "logo.svg", class: "h-8 sm:h-10 w-auto text-gray-600" %>
+        <h1 class="text-xl sm:text-3xl font-bold leading-tight tracking-tight text-gray-900"><%= title %></h1>
+      </div>
+      <% if user_signed_in? %>
+        <%= button_to session_path, method: :delete, class: "rounded-md bg-white px-3 py-2 text-gray-900 hover:bg-gray-50" do %>
+          <%= inline_svg "icons/mini/arrow_right_on_rectangle.svg", class: "w-5 h-5" %>
+          <span class="sr-only">Sign out</span>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </header>

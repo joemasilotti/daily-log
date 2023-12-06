@@ -25,3 +25,10 @@ Start the server.
 ```bash
 bin/dev
 ```
+
+## Database seeds
+
+Seeding the database, either via `rails db:seed` or during `bin/setup`, creates a demo account.
+
+* Email: `user@example.com`
+* Password: `password`
