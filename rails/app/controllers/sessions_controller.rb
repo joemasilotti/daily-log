@@ -1,12 +1,14 @@
 class SessionsController < ApplicationController
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: %i[new create]
+  before_action :redirect_if_authenticated, only: :new
 
   def create
     if (user = User.authenticate_by(authentication_params))
       sign_in user
-      redirect_to root_path, notice: "You are now signed in."
+      redirect_to days_path, notice: "You are now signed in."
     else
-      render :new, status: :unprocessable_entity, alert: "Invalid email or password."
+      flash.now.alert = "Invalid email or password."
+      render :new, status: :unprocessable_entity
     end
   end
 

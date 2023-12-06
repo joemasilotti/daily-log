@@ -22,6 +22,10 @@ module Authentication
     end
   end
 
+  def redirect_if_authenticated
+    redirect_to days_path if user_signed_in?
+  end
+
   private
 
   def current_user
