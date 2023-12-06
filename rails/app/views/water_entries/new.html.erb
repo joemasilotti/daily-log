@@ -4,7 +4,7 @@
   <%= render "shared/components/form/errors", name: "water", errors: @entry.errors %>
 <% end %>
 
-<%= form_with model: @entry, class: "max-w-lg mx-auto" do |form| %>
+<%= form_with model: @entry, html: {"data-turbo-action": "replace"}, class: "max-w-lg mx-auto" do |form| %>
   <div class="border-b border-gray-900/10 pb-12">
     <div class="mt-10">
       <%= form.label :amount, class: "block text-sm font-medium leading-6 text-gray-900" %>
