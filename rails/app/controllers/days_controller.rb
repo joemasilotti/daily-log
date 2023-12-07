@@ -2,7 +2,7 @@ class DaysController < ApplicationController
   before_action :set_date
 
   def index
-    redirect_to day_path(Date.today)
+    redirect_to day_path(Date.current)
   end
 
   def show
@@ -17,6 +17,6 @@ class DaysController < ApplicationController
   def set_date
     @date = Date.parse(params[:id].to_s)
   rescue Date::Error
-    redirect_to day_path(Date.today)
+    redirect_to day_path(Date.current)
   end
 end

@@ -8,6 +8,6 @@ module HasDate
   def set_date
     @date = Date.parse(params[:date].to_s)
   rescue Date::Error
-    @date = Date.today
+    @date = Date.current
   end
 end
