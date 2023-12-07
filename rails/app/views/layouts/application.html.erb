@@ -7,19 +7,19 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= analytics_tag %>
   </head>
 
   <body class="h-full">
     <%= render "shared/header", title: page_title %>
     <%= render "shared/flash" %>
-
     <main>
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 my-4 sm:my-6">
         <%= yield %>
       </div>
     </main>
+    <%= track_page_view_script %>
   </body>
 </html>

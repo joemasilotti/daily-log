@@ -17,5 +17,6 @@ module DailyLog
     config.autoload_lib(ignore: %w[assets tasks])
 
     config.time_zone = "Pacific Time (US & Canada)"
+    config.fathom = config_for(:fathom)
   end
 end
