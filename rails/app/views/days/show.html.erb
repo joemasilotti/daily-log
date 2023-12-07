@@ -5,13 +5,13 @@
   <div class="space-y-4 sm:space-y-8">
     <%= render "shared/components/list", title: "Exercise", path: new_exercise_entry_path(date: @date) do %>
       <% @exercise_entries.each do |entry| %>
-        <%= render "shared/components/list/item", title: entry.name %>
+        <%= render "shared/components/list/item", title: entry.name, href: edit_exercise_entry_path(entry) %>
       <% end %>
     <% end %>
 
     <%= render "shared/components/list", title: "Medication & supplements", path: new_medication_entry_path(date: @date) do %>
       <% @medication_entries.each do |entry| %>
-        <%= render "shared/components/list/item", title: entry.name %>
+        <%= render "shared/components/list/item", title: entry.name, href: edit_medication_entry_path(entry) %>
       <% end %>
     <% end %>
 
@@ -23,7 +23,7 @@
   <div>
     <%= render "shared/components/list", title: "Food", path: new_food_entry_path(date: @date) do %>
       <% @food_entries.each do |entry| %>
-        <%= render "shared/components/list/item", title: entry.name, out: entry.out? %>
+        <%= render "shared/components/list/item", title: entry.name, href: edit_food_entry_path(entry), out: entry.out? %>
       <% end %>
     <% end %>
   </div>

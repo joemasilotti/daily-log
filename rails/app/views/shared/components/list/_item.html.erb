@@ -1,9 +1,21 @@
-<%# locals: (title:, out: false) %>
+<%# locals: (title:, href: nil, out: false) %>
 
-<li class="flex justify-between gap-x-6 py-5">
-  <p class="text-sm font-medium leading-6 text-gray-900"><%= title %></p>
-
-  <% if out %>
-    <span class="inline-flex items-center rounded-md bg-red-100 px-1.5 py-0.5 text-xs font-medium text-red-700 uppercase">Out</span>
-  <% end %>
+<li class="relative flex justify-between gap-x-6 px-4 py-5 sm:px-6 <%= "hover:bg-gray-50" if href.present? %>">
+  <div class="flex min-w-0 gap-x-4">
+    <div class="min-w-0 flex-auto">
+      <% if href.present? %>
+        <%= link_to href do %>
+          <span class="absolute inset-x-0 -top-px bottom-0"></span>
+          <span class="text-sm font-medium leading-6 text-gray-900"><%= title %></span>
+        <% end %>
+      <% else %>
+        <span class="text-sm font-medium leading-6 text-gray-900"><%= title %></span>
+      <% end %>
+    </div>
+  </div>
+  <div class="flex shrink-0 items-center">
+    <% if out %>
+      <span class="inline-flex items-center rounded-md bg-red-100 px-1.5 py-0.5 text-xs font-medium text-red-700 uppercase">Out</span>
+    <% end %>
+  </div>
 </li>

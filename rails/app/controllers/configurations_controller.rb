@@ -6,7 +6,10 @@ class ConfigurationsController < ApplicationController
       settings: {},
       rules: [
         {
-          patterns: ["/new$"],
+          patterns: [
+            "/new$",
+            "/edit$"
+          ],
           properties: {
             context: "modal"
           }
