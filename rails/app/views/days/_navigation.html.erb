@@ -1,11 +1,11 @@
 <%# locals: (date:) %>
 
-<span class="isolate inline-flex rounded-md shadow-sm">
-  <%= link_to prev_day_path(date), class: "relative inline-flex items-center rounded-l-md bg-white p-1.5 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10" do %>
+<span data-controller="bridge--navigation" class="isolate inline-flex rounded-md shadow-sm">
+  <%= link_to prev_day_path(date), "data-bridge--navigation-target": "previous", "data-turbo-action": "replace", class: "relative inline-flex items-center rounded-l-md bg-white p-1.5 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10" do %>
     <span class="sr-only">Previous day</span>
     <%= inline_svg "icons/mini/chevron_left.svg", class: "w-5 h-5" %>
   <% end %>
-  <%= link_to next_day_path(date), class: "relative -ml-px inline-flex items-center rounded-r-md bg-white p-1.5 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10" do %>
+  <%= link_to next_day_path(date), "data-bridge--navigation-target": "next", "data-turbo-action": "replace", class: "relative -ml-px inline-flex items-center rounded-r-md bg-white p-1.5 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10" do %>
     <span class="sr-only">Next day</span>
     <%= inline_svg "icons/mini/chevron_right.svg", class: "w-5 h-5" %>
   <% end %>
