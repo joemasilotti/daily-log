@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84A23A2B2B2364DA00654CDF /* FormComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A23A2A2B2364DA00654CDF /* FormComponent.swift */; };
 		84C3CE692B216CD40036700C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C3CE682B216CD40036700C /* WebViewController.swift */; };
 		84C3CE6F2B216D1E0036700C /* BridgeComponent+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C3CE6E2B216D1E0036700C /* BridgeComponent+App.swift */; };
 		84C3CE712B216E010036700C /* Turbo+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C3CE702B216E010036700C /* Turbo+Configuration.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84A23A2A2B2364DA00654CDF /* FormComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormComponent.swift; sourceTree = "<group>"; };
 		84C3CE682B216CD40036700C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		84C3CE6E2B216D1E0036700C /* BridgeComponent+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BridgeComponent+App.swift"; sourceTree = "<group>"; };
 		84C3CE702B216E010036700C /* Turbo+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Turbo+Configuration.swift"; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				84C3CE6E2B216D1E0036700C /* BridgeComponent+App.swift */,
+				84A23A2A2B2364DA00654CDF /* FormComponent.swift */,
 				84C3CE722B216E320036700C /* NavigationComponent.swift */,
 			);
 			path = Components;
@@ -228,6 +231,7 @@
 				84DE93A12B202F62006BDECB /* AppDelegate.swift in Sources */,
 				84C3CE692B216CD40036700C /* WebViewController.swift in Sources */,
 				84DE93BE2B205228006BDECB /* Endpoint.swift in Sources */,
+				84A23A2B2B2364DA00654CDF /* FormComponent.swift in Sources */,
 				84DE93A32B202F62006BDECB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

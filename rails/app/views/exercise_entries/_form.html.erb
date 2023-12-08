@@ -4,7 +4,7 @@
   <%= render "shared/components/form/errors", name: "exercise", errors: entry.errors %>
 <% end %>
 
-<%= form_with model: entry, html: {"data-turbo-action": "replace"}, class: "max-w-lg mx-auto" do |form| %>
+<%= strada_form_with model: entry, html: {data: {"turbo-action": "replace"}}, class: "max-w-lg mx-auto" do |form| %>
   <div class="form-container">
     <div class="form-group">
       <%= form.label :name, "What did you do?", class: "form-label" %>

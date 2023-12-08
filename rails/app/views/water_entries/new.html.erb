@@ -5,7 +5,7 @@
 <% end %>
 
 <div class="max-w-lg mx-auto">
-  <%= form_with model: @entry, html: {"data-turbo-action": "replace"} do |form| %>
+  <%= strada_form_with model: @entry, html: {"data-turbo-action": "replace"} do |form| %>
     <div class="form-container">
       <div class="form-group">
         <%= form.label :amount, class: "form-label" %>

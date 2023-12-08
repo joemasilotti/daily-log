@@ -5,7 +5,7 @@
     <h2 class="text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
   </div>
   <div class="mt-6 sm:mx-auto sm:w-full sm:max-w-sm turbo-native:mt-0">
-    <%= form_with url: session_path, html: {"data-turbo-action": "replace"}, class: "space-y-6" do |form| %>
+    <%= strada_form_with url: session_path, html: {"data-turbo-action": "replace"}, class: "space-y-6" do |form| %>
       <div>
         <%= form.label :email, "Email address", class: "form-label" %>
         <%= form.email_field :email, autocomplete: "email", required: true, class: "form-input" %>
@@ -15,7 +15,7 @@
         <%= form.password_field :password, autocomplete: "current-password", required: true, class: "form-input" %>
       </div>
       <div>
-        <button type="submit" class="btn-primary w-full">Sign in</button>
+        <%= form.submit "Sign in", class: "btn-primary w-full" %>
       </div>
     <% end %>
     <p class="mt-10 text-center text-sm text-gray-500">Not a member? <%= link_to "Create an account", new_user_path, class: "font-semibold leading-6 text-primary-600 hover:text-primary-500" %></p>
