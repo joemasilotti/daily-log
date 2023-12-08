@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_many :medication_entries
   has_many :water_entries
   has_many :food_entries
+
+  encrypts :email, deterministic: true, downcase: true
 end

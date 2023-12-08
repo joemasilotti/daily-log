@@ -3,4 +3,6 @@ class FoodEntry < ApplicationRecord
   validates :out, inclusion: [true, false]
 
   belongs_to :user
+
+  encrypts :name
 end

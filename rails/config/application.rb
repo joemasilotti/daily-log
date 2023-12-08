@@ -18,5 +18,8 @@ module DailyLog
 
     config.time_zone = "Pacific Time (US & Canada)"
     config.fathom = config_for(:fathom)
+
+    # Temporarily enable access to plain text during encryption migration.
+    config.active_record.encryption.support_unencrypted_data = true
   end
 end
