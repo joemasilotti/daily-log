@@ -25,24 +25,27 @@
       <%= form.submit "Save", class: "btn-primary" %>
     </div>
   <% end %>
-  <div class="pb-5 mt-10">
-    <h3 class="text-base font-semibold leading-6 text-gray-900">Recent entries</h3>
-    <p class="mt-2 max-w-4xl text-sm text-gray-500">Tap to add.</p>
-  </div>
-  <div class="grid grid-cols-3 gap-4">
-    <% @recent_amounts.each do |amount| %>
-      <div class="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400">
-        <div class="min-w-0 flex-1">
-          <%= form_with model: @entry, html: {"data-turbo-action": "replace"} do |form| %>
-            <%= form.hidden_field :amount, value: amount %>
-            <%= form.hidden_field :occurred_on, value: @date %>
-            <%= form.button type: "submit", class: "focus:outline-none" do %>
-              <span class="absolute inset-0" aria-hidden="true"></span>
-              <p class="text-sm font-medium text-gray-900"><%= amount %> oz</p>
+
+  <% if @recent_amounts.any? %>
+    <div class="pb-5 mt-10">
+      <h3 class="text-base font-semibold leading-6 text-gray-900">Recent entries</h3>
+      <p class="mt-2 max-w-4xl text-sm text-gray-500">Tap to add.</p>
+    </div>
+    <div class="grid grid-cols-3 gap-4">
+      <% @recent_amounts.each do |amount| %>
+        <div class="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400">
+          <div class="min-w-0 flex-1">
+            <%= form_with model: @entry, html: {"data-turbo-action": "replace"} do |form| %>
+              <%= form.hidden_field :amount, value: amount %>
+              <%= form.hidden_field :occurred_on, value: @date %>
+              <%= form.button type: "submit", class: "focus:outline-none" do %>
+                <span class="absolute inset-0" aria-hidden="true"></span>
+                <p class="text-sm font-medium text-gray-900"><%= amount %> oz</p>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
