@@ -1,3 +1,5 @@
+# Code of conduct
+
 ## Our pledge
 
 We as members, contributors, and leaders pledge to make participation in our
