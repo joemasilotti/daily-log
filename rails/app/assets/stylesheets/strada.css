@@ -4,3 +4,9 @@
 [type="submit"] {
   display: none;
 }
+
+/* bridge--button component */
+[data-bridge-components~="button"]
+[data-controller~="bridge--button"] {
+  display: none;
+}
