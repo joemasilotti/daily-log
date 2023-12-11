@@ -19,4 +19,7 @@
 <div class="max-w-lg mx-auto">
   <hr class="my-16">
   <%= button_to "Sign out", session_path, method: :delete, "data-turbo-action": "replace", class: "btn-secondary w-full" %>
+  <h2 class="text-base font-semibold leading-7 text-gray-900 mt-8">Delete account</h2>
+  <p class="mt-1 text-sm leading-6 text-gray-600">This action is not reversible. All information related to this account will be deleted permanently.</p>
+  <%= button_to "Delete my account", user_path(current_user), method: :delete, "data-turbo-action": "replace", "data-turbo-confirm": "Are you sure you want to delete your account?", class: "btn-secondary text-red-500 ring-red-200 hover:bg-red-50 mt-4" %>
 </div>

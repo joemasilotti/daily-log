@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :authenticate_user!
-  before_action :redirect_if_authenticated
+  before_action :redirect_if_authenticated, except: :destroy
 
   def new
     @user = User.new
@@ -14,6 +14,11 @@ class UsersController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    current_user.destroy!
+    redirect_to root_path, notice: "Your account and all associated data have been deleted."
   end
 
   private

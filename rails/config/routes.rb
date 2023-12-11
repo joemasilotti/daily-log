@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :exercise_entries, only: %i[new create edit update]
   resources :food_entries, only: %i[new create edit update]
   resources :medication_entries, only: %i[new create edit update]
-  resources :users, only: %w[new create]
+  resources :users, only: %w[new create destroy]
   resources :water_entries, only: %i[new create]
 
   resources :configurations, only: [] do
