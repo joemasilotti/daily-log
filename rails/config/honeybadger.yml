@@ -1,4 +1,4 @@
-api_key: "<%= Rails.application.credentials.fetch(:honeybadger, :api_key) %>"
+api_key: "<%= Rails.application.credentials.dig(:honeybadger, :api_key) %>"
 env: "<%= Rails.env %>"
 root: "<%= Rails.root.to_s %>"
 development_environments:
