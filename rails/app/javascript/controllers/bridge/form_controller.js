@@ -6,16 +6,7 @@ export default class extends BridgeComponent {
 
   connect() {
     super.connect()
-    this.notifyBridgeOfConnect()
-  }
-
-  notifyBridgeOfConnect() {
-    const submitButton = new BridgeElement(this.submitTarget)
-    const submitTitle = submitButton.bridgeAttribute("title") || submitButton.title
-
-    this.send("connect", { submitTitle }, () => {
-      this.submitTarget.click()
-    })
+    this.#notifyBridgeOfConnect()
   }
 
   submitStart(event) {
@@ -27,5 +18,13 @@ export default class extends BridgeComponent {
     this.submitTarget.disabled = false
     this.send("submitEnabled")
   }
-}
 
+  #notifyBridgeOfConnect() {
+    const submitButton = new BridgeElement(this.submitTarget)
+    const submitTitle = submitButton.bridgeAttribute("title") || submitButton.title
+
+    this.send("connect", {submitTitle}, () => {
+      this.submitTarget.click()
+    })
+  }
+}
