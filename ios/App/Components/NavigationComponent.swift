@@ -19,20 +19,28 @@ class NavigationComponent: BridgeComponent {
     }
 
     private func addPreviousButton(to viewController: UIViewController) {
-        let image = UIImage(systemName: "chevron.backward.circle")
-        let action = UIAction { [unowned self] _ in
-            self.reply(to: "previous")
-        }
-        viewController.navigationItem.leftBarButtonItem =
-            UIBarButtonItem(image: image, primaryAction: action)
-    }
-
-    private func addNextButton(to viewController: UIViewController) {
         let image = UIImage(systemName: "chevron.forward.circle")
         let action = UIAction { [unowned self] _ in
             self.reply(to: "next")
         }
-        viewController.navigationItem.rightBarButtonItem =
-            UIBarButtonItem(image: image, primaryAction: action)
+        let item = UIBarButtonItem(image: image, primaryAction: action)
+        addBarButtonItem(item, to: viewController)
+    }
+
+    private func addNextButton(to viewController: UIViewController) {
+        let image = UIImage(systemName: "chevron.backward.circle")
+        let action = UIAction { [unowned self] _ in
+            self.reply(to: "previous")
+        }
+        let item = UIBarButtonItem(image: image, primaryAction: action)
+        addBarButtonItem(item, to: viewController)
+    }
+
+    private func addBarButtonItem(_ item: UIBarButtonItem, to viewController: UIViewController) {
+        var items = viewController.navigationItem.rightBarButtonItems ?? [UIBarButtonItem]()
+        guard items.count < 2 else { return }
+
+        items.append(item)
+        viewController.navigationItem.rightBarButtonItems = items
     }
 }
