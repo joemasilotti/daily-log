@@ -29,11 +29,9 @@
   </div>
 </div>
 
-<%= button_to "Sign out", session_path,
-  method: :delete,
-  "data-turbo-action": "replace",
+<%= link_to "Settings", settings_path,
   "data-controller": "bridge--button",
-  "data-bridge-ios-image": "rectangle.portrait.and.arrow.right",
+  "data-bridge-ios-image": "person.circle",
   "data-bridge-side": "left",
   class: "btn-secondary w-full mt-8 non-turbo-native:hidden"
 %>

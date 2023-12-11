@@ -15,3 +15,8 @@
     <%= form.submit "Save", class: "btn-primary" %>
   </div>
 <% end %>
+
+<div class="max-w-lg mx-auto">
+  <hr class="my-16">
+  <%= button_to "Sign out", session_path, method: :delete, "data-turbo-action": "replace", class: "btn-secondary w-full" %>
+</div>

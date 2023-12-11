@@ -12,7 +12,7 @@
   }
 
   .form-container {
-    @apply border-b border-gray-900/10 pb-8 sm:pb-12;
+    @apply border-b border-gray-900/10 pb-8 sm:pb-12 turbo-native:border-0 turbo-native:pb-0;
   }
 
   .form-group {

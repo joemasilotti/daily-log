@@ -6,7 +6,7 @@ class SettingsController < ApplicationController
   def update
     @settings = current_user.settings
     if @settings.update(settings_params)
-      redirect_to settings_path, notice: "Settings updated"
+      redirect_after_update
     else
       render :edit, status: :unprocessable_entity
     end
@@ -16,5 +16,13 @@ class SettingsController < ApplicationController
 
   def settings_params
     params.require(:setting).permit(:time_zone)
+  end
+
+  def redirect_after_update
+    if turbo_native_app?
+      redirect_to turbo_recede_historical_location_path
+    else
+      redirect_to settings_path, notice: "Settings updated"
+    end
   end
 end

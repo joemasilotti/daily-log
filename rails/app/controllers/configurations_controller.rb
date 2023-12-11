@@ -6,9 +6,16 @@ class ConfigurationsController < ApplicationController
       settings: {},
       rules: [
         {
+          patterns: ["/recede_historical_location"],
+          properties: {
+            presentation: "pop"
+          }
+        },
+        {
           patterns: [
             "/new$",
-            "/edit$"
+            "/edit$",
+            "/settings"
           ],
           properties: {
             context: "modal"
