@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		842525C62B2788BA00DB6CD3 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842525C52B2788BA00DB6CD3 /* ButtonComponent.swift */; };
 		84A23A2B2B2364DA00654CDF /* FormComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A23A2A2B2364DA00654CDF /* FormComponent.swift */; };
 		84C3CE692B216CD40036700C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C3CE682B216CD40036700C /* WebViewController.swift */; };
 		84C3CE6F2B216D1E0036700C /* BridgeComponent+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C3CE6E2B216D1E0036700C /* BridgeComponent+App.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		842525C52B2788BA00DB6CD3 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 		84A23A2A2B2364DA00654CDF /* FormComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormComponent.swift; sourceTree = "<group>"; };
 		84C3CE682B216CD40036700C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		84C3CE6E2B216D1E0036700C /* BridgeComponent+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BridgeComponent+App.swift"; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			children = (
 				84C3CE6E2B216D1E0036700C /* BridgeComponent+App.swift */,
 				84A23A2A2B2364DA00654CDF /* FormComponent.swift */,
+				842525C52B2788BA00DB6CD3 /* ButtonComponent.swift */,
 				84C3CE722B216E320036700C /* NavigationComponent.swift */,
 			);
 			path = Components;
@@ -225,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84C3CE6F2B216D1E0036700C /* BridgeComponent+App.swift in Sources */,
+				842525C62B2788BA00DB6CD3 /* ButtonComponent.swift in Sources */,
 				84C3CE712B216E010036700C /* Turbo+Configuration.swift in Sources */,
 				84C3CE732B216E320036700C /* NavigationComponent.swift in Sources */,
 				84DE93BB2B203C00006BDECB /* UINavigationBar+Appearance.swift in Sources */,

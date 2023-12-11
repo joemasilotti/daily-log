@@ -29,6 +29,11 @@
   </div>
 </div>
 
-<div class="hidden mt-16 turbo-native:block">
-  <%= button_to "Sign out", session_path, method: :delete, "data-turbo-action": "replace", class: "btn-secondary w-full" %>
-</div>
+<%= button_to "Sign out", session_path,
+  method: :delete,
+  "data-turbo-action": "replace",
+  "data-controller": "bridge--button",
+  "data-bridge-ios-image": "rectangle.portrait.and.arrow.right",
+  "data-bridge-side": "left",
+  class: "hidden"
+%>
