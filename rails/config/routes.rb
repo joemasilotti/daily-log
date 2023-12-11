@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  get "/settings", to: "settings#edit", as: :settings
+
   resource :home, only: :show
   resource :session, only: %i[new create destroy]
+  resource :settings, only: %i[edit update]
 
   resources :days, only: %i[index show]
   resources :exercise_entries, only: %i[new create edit update]

@@ -35,6 +35,10 @@
     @apply h-4 w-4 rounded border-gray-300 text-primary-600 focus:ring-primary-600 mr-3;
   }
 
+  .form-select {
+    @apply mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-primary-600 sm:text-sm sm:leading-6;
+  }
+
   .form-buttons {
     @apply mt-6 flex items-center justify-end gap-x-6;
   }

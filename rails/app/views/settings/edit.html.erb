@@ -1,0 +1,17 @@
+<%= content_for :title, "Settings" %>
+
+<% if @settings.errors.any? %>
+  <%= render "shared/components/form/errors", name: "settings", errors: @settings.errors %>
+<% end %>
+
+<%= strada_form_with model: @settings, url: settings_path, as: :settings, html: {data: {"turbo-action": "replace"}}, class: "max-w-lg mx-auto" do |form| %>
+  <div class="form-container">
+    <div class="form-group">
+      <%= form.label :time_zone, class: "form-label" %>
+      <%= form.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones, {}, class: "form-select" %>
+    </div>
+  </div>
+  <div class="form-buttons">
+    <%= form.submit "Save", class: "btn-primary" %>
+  </div>
+<% end %>

@@ -5,10 +5,14 @@ class User < ApplicationRecord
 
   normalizes :email, with: -> { _1.strip.downcase }
 
-  has_many :exercise_entries
-  has_many :medication_entries
-  has_many :water_entries
-  has_many :food_entries
+  has_many :exercise_entries, dependent: :destroy
+  has_many :medication_entries, dependent: :destroy
+  has_many :water_entries, dependent: :destroy
+  has_many :food_entries, dependent: :destroy
+
+  has_one :settings, dependent: :destroy, class_name: "Setting"
+
+  after_create_commit :create_settings!
 
   encrypts :email, deterministic: true, downcase: true
 end
