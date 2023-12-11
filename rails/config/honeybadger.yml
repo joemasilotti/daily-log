@@ -1,0 +1,7 @@
+api_key: "<%= Rails.credentials.honeybadger[:api_key] %>"
+env: "<%= Rails.env %>"
+root: "<%= Rails.root.to_s %>"
+development_environments:
+  - test
+  - development
+debug: false
