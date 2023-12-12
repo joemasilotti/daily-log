@@ -1,8 +1,16 @@
 class WaterEntry < ApplicationRecord
-  validates :amount, numericality: {greater_than_or_equal_to: 0}
   validates :occurred_on, presence: true
 
   belongs_to :user
 
-  scope :recent_amounts, -> { distinct.limit(3).pluck(:amount) }
+  scope :recent, -> { distinct(:amount).order(created_at: :desc).limit(3) }
+
+  measured_volume :amount
+
+  def self.units
+    {
+      imperial: "oz",
+      metric: "ml"
+    }
+  end
 end

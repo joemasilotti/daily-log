@@ -8,11 +8,12 @@
   <%= strada_form_with model: @entry, html: {"data-turbo-action": "replace"} do |form| %>
     <div class="form-container">
       <div class="form-group">
-        <%= form.label :amount, class: "form-label" %>
+        <%= form.label :amount_value, "Amount", class: "form-label" %>
         <div class="relative rounded-md shadow-sm">
-          <%= form.number_field :amount, min: 1, value: nil, class: "form-input pr-12" %>
-          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-            <span class="text-gray-500 sm:text-sm">oz</span>
+          <%= form.number_field :amount_value, min: 1, value: nil, class: "form-input pr-14" %>
+          <div class="absolute inset-y-0 right-0 flex items-center">
+            <%= form.label :amount_unit, class: "sr-only" %>
+            <%= form.select :amount_unit, WaterEntry.units.values, {selected: current_user.settings.water_unit}, class: "h-full rounded-md border-0 bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm" %>
           </div>
         </div>
       </div>
@@ -26,21 +27,22 @@
     </div>
   <% end %>
 
-  <% if @recent_amounts.any? %>
+  <% if @recent_entries.any? %>
     <div class="pb-5 mt-10">
       <h3 class="text-base font-semibold leading-6 text-gray-900">Recent entries</h3>
       <p class="mt-2 max-w-4xl text-sm text-gray-500">Tap to add.</p>
     </div>
     <div class="flex space-x-4">
-      <% @recent_amounts.each do |amount| %>
+      <% @recent_entries.each do |entry| %>
         <div class="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white px-8 py-5 shadow-sm focus-within:ring-2 focus-within:ring-primary-500 focus-within:ring-offset-2 hover:border-gray-400">
           <div class="min-w-0">
             <%= form_with model: @entry, html: {"data-turbo-action": "replace"} do |form| %>
-              <%= form.hidden_field :amount, value: amount %>
+              <%= form.hidden_field :amount_value, value: entry.amount_value %>
+              <%= form.hidden_field :amount_unit, value: entry.amount_unit %>
               <%= form.hidden_field :occurred_on, value: @date %>
               <%= form.button type: "submit", class: "focus:outline-none" do %>
                 <span class="absolute inset-0" aria-hidden="true"></span>
-                <p class="text-sm font-medium text-gray-900"><%= amount %> oz</p>
+                <p class="text-sm font-medium text-gray-900"><%= entry.amount %></p>
               <% end %>
             <% end %>
           </div>

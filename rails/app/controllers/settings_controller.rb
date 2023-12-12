@@ -15,7 +15,7 @@ class SettingsController < ApplicationController
   private
 
   def settings_params
-    params.require(:setting).permit(:time_zone)
+    params.require(:setting).permit(:measurement_system, :time_zone)
   end
 
   def redirect_after_update

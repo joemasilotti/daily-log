@@ -3,15 +3,15 @@ class WaterEntriesController < ApplicationController
 
   def new
     @entry = WaterEntry.new
-    @recent_amounts = current_user.water_entries.recent_amounts
+    @recent_entries = current_user.water_entries.recent
   end
 
   def create
     @entry = WaterEntry.new(entry_params)
     if @entry.save
-      redirect_to day_path(@entry.occurred_on), notice: "Added #{@entry.amount} oz of water"
+      redirect_to day_path(@entry.occurred_on), notice: "Added #{@entry.amount} of water"
     else
-      @recent_amounts = current_user.water_entries.recent_amounts
+      @recent_entries = current_user.water_entries.recent
       render :new, status: :unprocessable_entity
     end
   end
@@ -19,7 +19,7 @@ class WaterEntriesController < ApplicationController
   private
 
   def entry_params
-    params.require(:water_entry).permit(:amount, :occurred_on)
+    params.require(:water_entry).permit(:amount_value, :amount_unit, :occurred_on)
       .merge(user: current_user)
   end
 end

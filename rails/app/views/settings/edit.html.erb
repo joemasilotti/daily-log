@@ -6,6 +6,30 @@
 
 <%= strada_form_with model: @settings, url: settings_path, as: :settings, html: {data: {"turbo-action": "replace"}}, class: "max-w-lg mx-auto" do |form| %>
   <div class="form-container">
+    <fieldset class="form-group">
+      <legend class="form-label">Measurement system</legend>
+      <p class="form-text">Show entries in this system and set unit for new measurements.</p>
+      <div class="space-y-5 mt-4">
+        <div class="relative flex items-start">
+          <div class="flex h-6 items-center">
+            <%= form.radio_button :measurement_system, :imperial, class: "form-radio" %>
+          </div>
+          <div class="ml-3 text-sm leading-6">
+            <%= form.label :measurement_system_imperial, "Imperial", class: "form-label" %>
+            <p id="small-description" class="text-gray-500">Use ounces (oz) for water entries.</p>
+          </div>
+        </div>
+        <div class="relative flex items-start">
+          <div class="flex h-6 items-center">
+            <%= form.radio_button :measurement_system, :metric, class: "form-radio" %>
+          </div>
+          <div class="ml-3 text-sm leading-6">
+            <%= form.label :measurement_system_metric, "Metric", class: "form-label" %>
+            <p id="medium-description" class="text-gray-500">Use milliliters (ml) for water entries.</p>
+          </div>
+        </div>
+      </div>
+    </fieldset>
     <div class="form-group">
       <%= form.label :time_zone, class: "form-label" %>
       <%= form.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones, {}, class: "form-select" %>
