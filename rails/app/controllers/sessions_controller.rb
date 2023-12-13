@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
 
   def destroy
     sign_out current_user
+    clear_honeybadger_context
     redirect_to root_path, notice: "You are no longer signed in."
   end
 

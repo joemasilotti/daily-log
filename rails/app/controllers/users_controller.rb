@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 
   def destroy
     current_user.destroy!
+    clear_honeybadger_context
     redirect_to root_path, notice: "Your account and all associated data have been deleted."
   end
 
