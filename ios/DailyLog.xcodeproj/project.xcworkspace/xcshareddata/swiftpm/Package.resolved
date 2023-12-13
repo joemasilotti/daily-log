@@ -6,7 +6,7 @@
       "location" : "https://github.com/hotwired/strada-ios/",
       "state" : {
         "branch" : "fix-redirect-issue",
-        "revision" : "ffcc782534ec279299654bb14c78b24d1489020a"
+        "revision" : "beec8c36e115a4b945a7e23e5e336ea4c4288e4e"
       }
     },
     {
@@ -15,7 +15,7 @@
       "location" : "https://github.com/hotwired/turbo-ios",
       "state" : {
         "branch" : "turbo-navigator",
-        "revision" : "cd4f71e0a82bd116bcceebc8aee742d00e1fc2d4"
+        "revision" : "a5bb661dd5a5a63763a214ed4b3d18f68d9c1147"
       }
     }
   ],
