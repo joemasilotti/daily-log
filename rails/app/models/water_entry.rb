@@ -1,5 +1,7 @@
 class WaterEntry < ApplicationRecord
   validates :occurred_on, presence: true
+  validates :amount, presence: true
+  validates :amount, measured: {greater_than: 0}
 
   belongs_to :user
 
