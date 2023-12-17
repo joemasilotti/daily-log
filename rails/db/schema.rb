@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_17_161521) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_17_213359) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,6 +49,26 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_17_161521) do
     t.datetime "updated_at", null: false
     t.string "measurement_system", default: "imperial", null: false
     t.index ["user_id"], name: "index_settings_on_user_id"
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.bigint "tag_id"
+    t.bigint "food_entry_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["food_entry_id"], name: "index_taggings_on_food_entry_id"
+    t.index ["tag_id", "food_entry_id"], name: "index_taggings_on_tag_id_and_food_entry_id", unique: true
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "name", null: false
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "name"], name: "index_tags_on_user_id_and_name", unique: true
+    t.index ["user_id"], name: "index_tags_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -3,6 +3,7 @@ class FoodEntriesController < ApplicationController
 
   def new
     @entry = FoodEntry.new
+    @tags = current_user.tags
   end
 
   def create
@@ -10,12 +11,14 @@ class FoodEntriesController < ApplicationController
     if @entry.save
       redirect_to day_path(@entry.occurred_on), notice: "Added #{@entry.name}"
     else
+      @tags = current_user.tags
       render :new, status: :unprocessable_entity
     end
   end
 
   def edit
     @entry = current_user.food_entries.find(params[:id])
+    @tags = current_user.tags
   end
 
   def update
@@ -23,6 +26,7 @@ class FoodEntriesController < ApplicationController
     if @entry.update(entry_params)
       redirect_to day_path(@entry.occurred_on), notice: "Updated #{@entry.name}"
     else
+      @tags = current_user.tags
       render :new, status: :unprocessable_entity
     end
   end
@@ -30,7 +34,7 @@ class FoodEntriesController < ApplicationController
   private
 
   def entry_params
-    params.require(:food_entry).permit(:name, :out, :occurred_on)
+    params.require(:food_entry).permit(:name, :occurred_on, :out, tag_ids: [])
       .merge(user: current_user)
   end
 end

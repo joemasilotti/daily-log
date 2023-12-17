@@ -1,4 +1,4 @@
-<%# locals: (entry:, date:) %>
+<%# locals: (entry:, date:, tags:) %>
 
 <% if entry.errors.any? %>
   <%= render "shared/components/form/errors", name: "food", errors: entry.errors %>
@@ -14,10 +14,28 @@
       <%= form.label :occurred_on, "When?", class: "form-label" %>
       <%= form.date_field :occurred_on, value: date, class: "form-input" %>
     </div>
-    <div class="form-group form-checkbox-group">
-      <%= form.check_box :out, class: "form-checkbox" %>
-      <%= form.label :out, "Did you eat this meal out?", class: "form-label" %>
-    </div>
+    <% if current_user.has_feature?("tags") %>
+      <fieldset class="mt-10">
+        <div class="flex">
+          <legend class="form-label block">Tags</legend>
+          <%= link_to "Edit tags", tags_path, class: "btn-secondary inline-block px-2 py-1 text-xs ml-2" %>
+        </div>
+        <%= form.collection_check_boxes :tag_ids, tags, :id, :name do |builder| %>
+          <div class="form-group form-checkbox-group mt-4">
+            <%= builder.check_box "aria-label": builder.text, class: "form-checkbox" %>
+            <%= builder.label(class: "form-label") do %>
+              <%= builder.text %>
+              <span class="text-gray-500 font-normal ml-1"><%= builder.object.description %></span>
+            <% end %>
+          </div>
+        <% end %>
+      </fieldset>
+    <% else %>
+      <div class="form-group form-checkbox-group">
+        <%= form.check_box :out, class: "form-checkbox" %>
+        <%= form.label :out, "Did you eat this meal out?", class: "form-label" %>
+      </div>
+    <% end %>
   </div>
   <div class="form-buttons">
     <%= form.submit "Save", class: "btn-primary" %>

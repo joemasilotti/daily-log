@@ -1,0 +1,9 @@
+<% content_for :title, "My tags" %>
+
+<div class="max-w-lg mx-auto">
+  <%= render "shared/components/list", title: "Food tags", path: new_tag_path do %>
+    <% @tags.each do |tag| %>
+      <%= render "shared/components/list/item", title: tag.name, subtitle: tag.description, href: edit_tag_path(tag) %>
+    <% end %>
+  <% end %>
+</div>
