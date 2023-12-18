@@ -5,7 +5,7 @@ class WaterEntry < ApplicationRecord
 
   belongs_to :user
 
-  scope :recent, -> { distinct(:amount).order(created_at: :desc).limit(3) }
+  scope :recent, -> { distinct(:amount).order(created_at: :desc).limit(3).sort_by(&:amount) }
   scope :amounts, -> { map(&:amount).presence || [Measured::Volume.new(0, :oz)] }
 
   measured_volume :amount
