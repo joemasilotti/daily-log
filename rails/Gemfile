@@ -22,9 +22,12 @@ gem "tailwindcss-rails"
 gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[windows jruby]
 
+group :development do
+  gem "web-console"
+end
+
 group :development, :test do
   gem "pry-rails"
-  gem "web-console"
 end
 
 group :test do

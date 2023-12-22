@@ -8,7 +8,7 @@
 ## Requirements
 
 * Ruby 3.2.2
-* PostgreSQL 9.3 - `brew install pg`
+* PostgreSQL 9.3 - `brew install postgresql`
 
 ## Initial setup
 
