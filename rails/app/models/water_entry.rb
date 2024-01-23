@@ -17,3 +17,9 @@ class WaterEntry < ApplicationRecord
     }
   end
 end
+
+
+
+
+
+

@@ -23,3 +23,5 @@ class WaterEntriesController < ApplicationController
       .merge(user: current_user)
   end
 end
+
+
