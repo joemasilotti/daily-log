@@ -25,6 +25,7 @@ gem "tzinfo-data", platforms: %i[windows jruby]
 group :development, :test do
   gem "pry-rails"
   gem "web-console"
+  gem 'meta_request'
 end
 
 group :test do
