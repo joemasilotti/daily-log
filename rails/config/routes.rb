@@ -16,5 +16,11 @@ Rails.application.routes.draw do
     get :ios, on: :collection
   end
 
+  resources :water_entries do
+    collection do
+      get 'recent'
+    end
+  end
+  
   root "home#show"
 end

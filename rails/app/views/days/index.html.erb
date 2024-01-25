@@ -17,6 +17,7 @@
     <%= render "shared/components/list", title: "Water", path: "#" do %>
       <%= render "shared/components/list/item", title: "#{@water} oz" %>
     <% end %>
+    <%= link_to "Recent Water Entries", recent_water_entries_path, class: "btn-primary"%>
   </div>
 
   <div>
