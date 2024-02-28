@@ -1,0 +1,8 @@
+<!-- app/views/water_entries/recent.html.erb -->
+<h2>Recent Water Entries</h2>
+
+<ul>
+  <% @recent_water_entries.each do |entry| %>
+    <li><%= entry.task %> - <%= entry.occoured_on %></li>
+  <% end %>
+</ul>

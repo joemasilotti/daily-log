@@ -2,7 +2,7 @@ class WaterEntry < ApplicationRecord
   validates :occurred_on, presence: true
   validates :amount, presence: true
   validates :amount, measured: {greater_than: 0}
-
+  validates_presence_of :amount, :occurred_on
   belongs_to :user
 
   scope :recent, -> { distinct(:amount).order(created_at: :desc).limit(3) }
@@ -17,3 +17,9 @@ class WaterEntry < ApplicationRecord
     }
   end
 end
+
+
+
+
+
+

@@ -4,4 +4,6 @@ class ExerciseEntry < ApplicationRecord
   belongs_to :user
 
   encrypts :name
+
+  scope :recent, -> { distinct(:name).order(created_at: :desc).limit(3) }
 end

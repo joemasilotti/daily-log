@@ -3,6 +3,7 @@ class MedicationEntriesController < ApplicationController
 
   def new
     @entry = MedicationEntry.new
+     @recent_medication_entries = current_user.medication_entries.recent
   end
 
   def create
