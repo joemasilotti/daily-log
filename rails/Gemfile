@@ -16,7 +16,6 @@ gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
 gem "redis", ">= 4.0.1"
 gem "sprockets-rails"
-gem "standard"
 gem "stimulus-rails"
 gem "tailwindcss-rails"
 gem "turbo-rails"
@@ -25,6 +24,10 @@ gem "tzinfo-data", platforms: %i[windows jruby]
 group :development, :test do
   gem "pry-rails"
   gem "web-console"
+end
+
+group :development do
+  gem "standard"
 end
 
 group :test do
