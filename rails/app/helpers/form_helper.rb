@@ -22,7 +22,7 @@ module FormHelper
   def strada_form_data(options)
     {
       controller: "#{options.dig(:data, :controller)} bridge--form",
-      action: "turbo:submit-start->bridge--form#submitStart turbo:submit-end->bridge--form#submitEnd"
+      action: "#{options.dig(:data, :action)} turbo:submit-start->bridge--form#submitStart turbo:submit-end->bridge--form#submitEnd"
     }
   end
 end
