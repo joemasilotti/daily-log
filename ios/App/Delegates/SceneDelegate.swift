@@ -6,6 +6,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     private lazy var navigator = TurboNavigator(pathConfiguration: pathConfiguration, delegate: self)
     private let pathConfiguration = PathConfiguration(sources: [
+        .file(Bundle.main.url(forResource: "path-configuration", withExtension: "json")!),
         .server(Endpoint.pathConfigurationURL)
     ])
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4EFBF2932C3FBC8B00A9A01B /* path-configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EFBF2922C3FBC8B00A9A01B /* path-configuration.json */; };
 		842525C62B2788BA00DB6CD3 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842525C52B2788BA00DB6CD3 /* ButtonComponent.swift */; };
 		84A23A2B2B2364DA00654CDF /* FormComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A23A2A2B2364DA00654CDF /* FormComponent.swift */; };
 		84C3CE692B216CD40036700C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C3CE682B216CD40036700C /* WebViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4EFBF2922C3FBC8B00A9A01B /* path-configuration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "path-configuration.json"; sourceTree = "<group>"; };
 		842525C52B2788BA00DB6CD3 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 		84A23A2A2B2364DA00654CDF /* FormComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormComponent.swift; sourceTree = "<group>"; };
 		84C3CE682B216CD40036700C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		84DE93BC2B205223006BDECB /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				4EFBF2922C3FBC8B00A9A01B /* path-configuration.json */,
 				84DE93BD2B205228006BDECB /* Endpoint.swift */,
 			);
 			path = Configuration;
@@ -215,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84DE93AD2B202F63006BDECB /* LaunchScreen.storyboard in Resources */,
+				4EFBF2932C3FBC8B00A9A01B /* path-configuration.json in Resources */,
 				84DE93AA2B202F63006BDECB /* Assets.xcassets in Resources */,
 				84DE93A82B202F62006BDECB /* Main.storyboard in Resources */,
 			);
