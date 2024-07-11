@@ -9,6 +9,8 @@ extension Turbo {
 
         Turbo.config.makeCustomWebView = { configuration in
             let webView = WKWebView(frame: .zero, configuration: configuration)
+            webView.allowsLinkPreview = false
+
             Bridge.initialize(webView)
             return webView
         }
