@@ -11,7 +11,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		84DE939D2B202F62006BDECB /* Daily Log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Daily Log.app"; path = "/Users/joemasilotti/workspace/projects/daily-log/ios/build/Debug-iphoneos/Daily Log.app"; sourceTree = "<absolute>"; };
+		848871002CE7CFEC00651A1C /* Daily Log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -44,6 +44,7 @@
 			isa = PBXGroup;
 			children = (
 				84565F372CE791B90074DFDA /* App */,
+				848871002CE7CFEC00651A1C /* Daily Log.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,7 +71,7 @@
 				84565F482CE7921C0074DFDA /* HotwireNative */,
 			);
 			productName = DailyLog;
-			productReference = 84DE939D2B202F62006BDECB /* Daily Log.app */;
+			productReference = 848871002CE7CFEC00651A1C /* Daily Log.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -267,7 +268,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.masilotti.daily-log";
 				PRODUCT_NAME = "Daily Log";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -297,7 +298,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.masilotti.daily-log";
 				PRODUCT_NAME = "Daily Log";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
