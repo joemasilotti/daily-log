@@ -1,4 +1,4 @@
-import Strada
+import HotwireNative
 import UIKit
 
 final class ButtonComponent: BridgeComponent {
