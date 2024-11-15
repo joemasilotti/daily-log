@@ -11,6 +11,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         UINavigationBar.configureWithOpaqueBackground()
+
+        Hotwire.registerBridgeComponents(BridgeComponent.allTypes)
+
         window?.rootViewController = navigator.rootViewController
         navigator.route(Endpoint.rootURL)
     }
