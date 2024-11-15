@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		84C3CE7A2B2179310036700C /* Strada in Frameworks */ = {isa = PBXBuildFile; productRef = 84C3CE792B2179310036700C /* Strada */; };
-		84DE93B82B203033006BDECB /* Turbo in Frameworks */ = {isa = PBXBuildFile; productRef = 84DE93B72B203033006BDECB /* Turbo */; };
+		84565F492CE7921C0074DFDA /* HotwireNative in Frameworks */ = {isa = PBXBuildFile; productRef = 84565F482CE7921C0074DFDA /* HotwireNative */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84DE93B82B203033006BDECB /* Turbo in Frameworks */,
-				84C3CE7A2B2179310036700C /* Strada in Frameworks */,
+				84565F492CE7921C0074DFDA /* HotwireNative in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,8 +67,7 @@
 			);
 			name = DailyLog;
 			packageProductDependencies = (
-				84DE93B72B203033006BDECB /* Turbo */,
-				84C3CE792B2179310036700C /* Strada */,
+				84565F482CE7921C0074DFDA /* HotwireNative */,
 			);
 			productName = DailyLog;
 			productReference = 84DE939D2B202F62006BDECB /* Daily Log.app */;
@@ -101,8 +98,7 @@
 			);
 			mainGroup = 84DE93942B202F62006BDECB;
 			packageReferences = (
-				84DE93B62B203033006BDECB /* XCRemoteSwiftPackageReference "turbo-ios" */,
-				84C3CE782B2179310036700C /* XCRemoteSwiftPackageReference "strada-ios" */,
+				84565F472CE7921C0074DFDA /* XCRemoteSwiftPackageReference "hotwire-native-ios" */,
 			);
 			productRefGroup = 84DE93942B202F62006BDECB;
 			projectDirPath = "";
@@ -337,34 +333,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		84C3CE782B2179310036700C /* XCRemoteSwiftPackageReference "strada-ios" */ = {
+		84565F472CE7921C0074DFDA /* XCRemoteSwiftPackageReference "hotwire-native-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hotwired/strada-ios/";
+			repositoryURL = "https://github.com/hotwired/hotwire-native-ios";
 			requirement = {
-				branch = "fix-redirect-issue";
-				kind = branch;
-			};
-		};
-		84DE93B62B203033006BDECB /* XCRemoteSwiftPackageReference "turbo-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hotwired/turbo-ios";
-			requirement = {
-				branch = "turbo-navigator";
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		84C3CE792B2179310036700C /* Strada */ = {
+		84565F482CE7921C0074DFDA /* HotwireNative */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 84C3CE782B2179310036700C /* XCRemoteSwiftPackageReference "strada-ios" */;
-			productName = Strada;
-		};
-		84DE93B72B203033006BDECB /* Turbo */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 84DE93B62B203033006BDECB /* XCRemoteSwiftPackageReference "turbo-ios" */;
-			productName = Turbo;
+			package = 84565F472CE7921C0074DFDA /* XCRemoteSwiftPackageReference "hotwire-native-ios" */;
+			productName = HotwireNative;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
