@@ -11,8 +11,7 @@ module FormHelper
   def strada_form_with(*, **options, &block)
     options[:html] ||= {}
     options[:html][:data] ||= {}
-    options[:html][:data] = options[:html][:data].merge(strada_form_data)
-
+    options[:html][:data] = options[:html][:data].merge(strada_form_data(options))
     options[:builder] = StradaFormBuilder
 
     form_with(*, **options, &block)
@@ -20,10 +19,10 @@ module FormHelper
 
   private
 
-  def strada_form_data
+  def strada_form_data(options)
     {
-      controller: "bridge--form",
-      action: "turbo:submit-start->bridge--form#submitStart turbo:submit-end->bridge--form#submitEnd"
+      controller: "#{options.dig(:data, :controller)} bridge--form",
+      action: "#{options.dig(:data, :action)} turbo:submit-start->bridge--form#submitStart turbo:submit-end->bridge--form#submitEnd"
     }
   end
 end
