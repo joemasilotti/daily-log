@@ -9,8 +9,9 @@ class User < ApplicationRecord
   has_many :medication_entries, dependent: :destroy
   has_many :water_entries, dependent: :destroy
   has_many :food_entries, dependent: :destroy
+  has_many :caffeine_entries, dependent: :destroy
 
-  has_one :settings, dependent: :destroy, class_name: "Setting"
+  has_one :settings, dependent: :destroy, class_name: 'Setting'
 
   after_create_commit :create_settings!
 

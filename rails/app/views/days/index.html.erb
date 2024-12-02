@@ -26,4 +26,10 @@
       <% end %>
     <% end %>
   </div>
+
+  <%= render "shared/components/list", title: "Caffeine", path: new_caffeine_entry_path do %>
+    <% @caffeine_entries.each do |entry| %>
+      <%= render "shared/components/list/item", title: entry.name, href: edit_caffeine_entry_path(entry) %>
+    <% end %>
+  <% end %>
 </div>
