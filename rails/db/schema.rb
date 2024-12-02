@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_12_02_112124) do
+ActiveRecord::Schema[7.1].define(version: 2024_12_02_124116) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "alcohol_entries", force: :cascade do |t|
+    t.string "name", null: false
+    t.date "occurred_on", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_alcohol_entries_on_user_id"
+  end
 
   create_table "caffeine_entries", force: :cascade do |t|
     t.string "name"
@@ -78,6 +87,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_12_02_112124) do
     t.index ["user_id"], name: "index_water_entries_on_user_id"
   end
 
+  add_foreign_key "alcohol_entries", "users"
   add_foreign_key "caffeine_entries", "users"
   add_foreign_key "exercise_entries", "users"
   add_foreign_key "food_entries", "users"

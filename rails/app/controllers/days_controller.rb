@@ -11,6 +11,7 @@ class DaysController < ApplicationController
     @water = current_user.water_entries.where(occurred_on: @date).amounts.sum.convert_to(current_user.settings.water_unit)
     @food_entries = current_user.food_entries.where(occurred_on: @date).order(:created_at)
     @caffeine_entries = current_user.caffeine_entries.where(occurred_on: @date).order(:created_at)
+    @alcohol_entries = current_user.alcohol_entries.where(occurred_on: @date).order(:created_at)
   end
 
   private
