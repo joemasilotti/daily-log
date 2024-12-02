@@ -18,7 +18,7 @@
     <%= render "shared/components/list", title: "Water", path: new_water_entry_path(date: @date) do %>
       <%= render "shared/components/list/item", title: "#{@water.value.round} #{@water.unit.name}" %>
     <% end %>
-  </div>
+
 
   <div>
     <%= render "shared/components/list", title: "Food", path: new_food_entry_path(date: @date) do %>
@@ -26,6 +26,19 @@
         <%= render "shared/components/list/item", title: entry.name, href: edit_food_entry_path(entry), out: entry.out? %>
       <% end %>
     <% end %>
+  </div>
+
+  <%= render "shared/components/list", title: "Caffeine", path: new_caffeine_entry_path do %>
+    <% @caffeine_entries.each do |entry| %>
+      <%= render "shared/components/list/item", title: entry.name, href: edit_caffeine_entry_path(entry) %>
+    <% end %>
+  <% end %>
+
+  <%= render "shared/components/list", title: "Alcohol", path: new_alcohol_entry_path do %>
+    <% @alcohol_entries.each do |entry| %>
+      <%= render "shared/components/list/item", title: entry.name, href: edit_alcohol_entry_path(entry) %>
+    <% end %>
+  <% end %>
   </div>
 </div>
 
