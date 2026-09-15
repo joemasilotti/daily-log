@@ -7,7 +7,11 @@ module Authentication
 
   def sign_in(user)
     Current.user = user
-    cookies.encrypted.permanent[:user_id] = user.id
+    cookies.encrypted.permanent[:user_id] = {
+      value: user.id,
+      secure: Rails.env.production?,
+      same_site: :lax
+    }
   end
 
   def sign_out(user)
